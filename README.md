@@ -1,16 +1,19 @@
 # terraform-aws-tardigrade-config-aggregator
 
-Terraform module to create a config aggregator
+Terraform module to either create an AWS Config configuration aggregator, authorize a configuration aggregator in
+another account to collect your data, or both. By default, the module is set to create an AWS Config configuration
+aggregator. If you would like to authorize another account to collect your data then you will need to toggle the
+`create_config_authorization` flag.
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | aggregator\_name | Name to use for the aggregator; required when `create_config_authorization` is `true` | string | `""` | no |
-| aggregator\_source\_account\_ids | List of source account IDs for the config aggregator; required when `create_config_aggregator` is `true` | list | `<list>` | no |
+| aggregator\_source\_account\_ids | List of source account IDs for the config aggregator; required when `create_config_aggregator` is `true` | list(string) | `<list>` | no |
 | authorized\_aggregator\_account\_id | Account ID where the authorized aggregator exists; required when `create_config_authorization` is `true` | string | `""` | no |
 | authorized\_aggregator\_region | Region where the authorized aggregator exists; required when `create_config_authorization` is `true` | string | `""` | no |
-| create\_config\_aggregator | Toggle that controls creation/management of a config aggregator | string | `"false"` | no |
+| create\_config\_aggregator | Toggle that controls creation/management of a config aggregator | string | `"true"` | no |
 | create\_config\_authorization | Toggle that controls creation/management of a config authorization | string | `"false"` | no |
 
 ## Outputs

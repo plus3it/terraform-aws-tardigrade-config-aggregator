@@ -1,10 +1,12 @@
 variable "create_config_authorization" {
   description = "Toggle that controls creation/management of a config authorization"
+  type        = bool
   default     = false
 }
 
 variable "create_config_aggregator" {
   description = "Toggle that controls creation/management of a config aggregator"
+  type        = bool
   default     = true
 }
 

@@ -9,10 +9,10 @@ aggregator. If you would like to authorize another account to collect your data 
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| aggregator\_name | Name to use for the aggregator; required when `create_config_authorization` is `true` | string | `""` | no |
-| aggregator\_source\_account\_ids | List of source account IDs for the config aggregator; required when `create_config_aggregator` is `true` | list(string) | `<list>` | no |
-| authorized\_aggregator\_account\_id | Account ID where the authorized aggregator exists; required when `create_config_authorization` is `true` | string | `""` | no |
-| authorized\_aggregator\_region | Region where the authorized aggregator exists; required when `create_config_authorization` is `true` | string | `""` | no |
+| aggregator\_name | Name to use for the aggregator; required when `create\_config\_authorization` is `true` | string | `""` | no |
+| aggregator\_source\_account\_ids | List of source account IDs for the config aggregator; required when `create\_config\_aggregator` is `true` | list(string) | `<list>` | no |
+| authorized\_aggregator\_account\_id | Account ID where the authorized aggregator exists; required when `create\_config\_authorization` is `true` | string | `""` | no |
+| authorized\_aggregator\_region | Region where the authorized aggregator exists; required when `create\_config\_authorization` is `true` | string | `""` | no |
 | create\_config\_aggregator | Toggle that controls creation/management of a config aggregator | bool | `"true"` | no |
 | create\_config\_authorization | Toggle that controls creation/management of a config authorization | bool | `"false"` | no |
 
@@ -20,6 +20,6 @@ aggregator. If you would like to authorize another account to collect your data 
 
 | Name | Description |
 |------|-------------|
-| config\_aggregator\_arn | The Amazon Resource Name (ARN) of the config aggregator |
-| config\_authorization\_arn | The Amazon Resource Name (ARN) of the config authorization |
+| config\_aggregator\_arn | The Amazon Resource Name \(ARN\) of the config aggregator |
+| config\_authorization\_arn | The Amazon Resource Name \(ARN\) of the config authorization |
 

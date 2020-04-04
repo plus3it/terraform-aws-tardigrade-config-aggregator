@@ -7,6 +7,12 @@ aggregator. If you would like to authorize another account to collect your data 
 
 
 <!-- BEGIN TFDOCS -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12 |
+
 ## Providers
 
 | Name | Version |
@@ -16,7 +22,7 @@ aggregator. If you would like to authorize another account to collect your data 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:-----:|
+|------|-------------|------|---------|:--------:|
 | aggregator\_name | Name to use for the aggregator; required when `create_config_authorization` is `true` | `string` | `""` | no |
 | aggregator\_source\_account\_ids | List of source account IDs for the config aggregator; required when `create_config_aggregator` is `true` | `list(string)` | `[]` | no |
 | authorized\_aggregator\_account\_id | Account ID where the authorized aggregator exists; required when `create_config_authorization` is `true` | `string` | `""` | no |

@@ -1,15 +1,3 @@
-variable "create_config_authorization" {
-  description = "Toggle that controls creation/management of a config authorization"
-  type        = bool
-  default     = false
-}
-
-variable "create_config_aggregator" {
-  description = "Toggle that controls creation/management of a config aggregator"
-  type        = bool
-  default     = true
-}
-
 variable "authorized_aggregator_account_id" {
   description = "Account ID where the authorized aggregator exists; required when `create_config_authorization` is `true`"
   type        = string

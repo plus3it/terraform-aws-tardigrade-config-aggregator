@@ -17,7 +17,6 @@ module "no_create" {
     aws = aws
   }
 
-  create_config_aggregator      = true
   aggregator_name               = "tardigrade-config-aggregator-${random_string.this.result}"
   aggregator_source_account_ids = [data.aws_caller_identity.current.account_id]
 }

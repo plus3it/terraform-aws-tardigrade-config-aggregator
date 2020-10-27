@@ -17,8 +17,6 @@ module "create_config_aggregator" {
     aws = aws
   }
 
-  create_config_authorization      = true
-  create_config_aggregator         = false
   aggregator_name                  = "tardigrade-config-auth-${random_string.this.result}"
   authorized_aggregator_account_id = data.aws_caller_identity.current.account_id
   authorized_aggregator_region     = "us-east-1"

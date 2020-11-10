@@ -1,10 +1,9 @@
-output "config_authorization_arn" {
-  description = "The Amazon Resource Name (ARN) of the config authorization"
-  value       = aws_config_aggregate_authorization.this.*.arn
+output aggregator {
+  description = "Object containing the Config Aggregator attributes"
+  value       = var.aggregator != null ? module.aggregator[0].aggregator : null
 }
 
-output "config_aggregator_arn" {
-  description = "The Amazon Resource Name (ARN) of the config aggregator"
-  value       = aws_config_configuration_aggregator.this.*.arn
+output authorization {
+  description = "Object containing the Config Aggregator Authorization attributes"
+  value       = var.authorization != null ? module.authorization[0].authorization : null
 }
-

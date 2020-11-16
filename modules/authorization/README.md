@@ -19,7 +19,7 @@ No requirements.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | account\_id | Account ID where the authorized aggregator exists | `string` | n/a | yes |
-| region | Region where the aggregator exists | `string` | n/a | yes |
+| region | Region where the authorized aggregator exists | `string` | n/a | yes |
 | tags | Map of tags to apply to the Config Aggregator Authorization | `map(string)` | `{}` | no |
 
 ## Outputs

@@ -4,7 +4,7 @@ variable account_id {
 }
 
 variable region {
-  description = "Region where the aggregator exists"
+  description = "Region where the authorized aggregator exists"
   type        = string
 }
 

@@ -1,40 +1,31 @@
 # terraform-aws-tardigrade-config-aggregator
 
-Terraform module to either create an AWS Config configuration aggregator, authorize a configuration aggregator in
-another account to collect your data, or both. By default, the module is set to create an AWS Config configuration
-aggregator. If you would like to authorize another account to collect your data then you will need to toggle the
-`create_config_authorization` flag.
-
+Terraform module to either create an AWS Config aggregator, authorize a configuration aggregator to
+collect your data, or both.
 
 <!-- BEGIN TFDOCS -->
 ## Requirements
 
 | Name | Version |
 |------|---------|
-| terraform | >= 0.12 |
+| terraform | >= 0.13 |
 
 ## Providers
 
-| Name | Version |
-|------|---------|
-| aws | n/a |
+No provider.
 
 ## Inputs
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| aggregator\_name | Name to use for the aggregator; required when `create_config_authorization` is `true` | `string` | `""` | no |
-| aggregator\_source\_account\_ids | List of source account IDs for the config aggregator; required when `create_config_aggregator` is `true` | `list(string)` | `[]` | no |
-| authorized\_aggregator\_account\_id | Account ID where the authorized aggregator exists; required when `create_config_authorization` is `true` | `string` | `""` | no |
-| authorized\_aggregator\_region | Region where the authorized aggregator exists; required when `create_config_authorization` is `true` | `string` | `""` | no |
-| create\_config\_aggregator | Toggle that controls creation/management of a config aggregator | `bool` | `true` | no |
-| create\_config\_authorization | Toggle that controls creation/management of a config authorization | `bool` | `false` | no |
+| aggregator | Object specifying the configuration of a Config Aggregator | <pre>object({<br>    name = string<br>    tags = map(string)<br>    account_aggregation_source = object({<br>      account_ids = list(string)<br>      all_regions = bool<br>      regions     = list(string)<br>    })<br>    organization_aggregation_source = object({<br>      all_regions = bool<br>      regions     = list(string)<br>      role_arn    = string<br>    })<br>  })</pre> | `null` | no |
+| authorization | Object specifying the configuration of a Config Aggregator Authorization | <pre>object({<br>    account_id = string<br>    region     = string<br>    tags       = map(string)<br>  })</pre> | `null` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| config\_aggregator\_arn | The Amazon Resource Name (ARN) of the config aggregator |
-| config\_authorization\_arn | The Amazon Resource Name (ARN) of the config authorization |
+| aggregator | Object containing the Config Aggregator attributes |
+| authorization | Object containing the Config Aggregator Authorization attributes |
 
 <!-- END TFDOCS -->

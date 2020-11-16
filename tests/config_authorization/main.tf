@@ -6,7 +6,6 @@ module config_authorization {
   source = "../../"
 
   authorization = {
-    name       = "tardigrade-config-auth-${random_string.this.result}"
     account_id = data.aws_caller_identity.current.account_id
     region     = "us-east-1"
     tags       = {}

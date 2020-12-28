@@ -1,8 +1,8 @@
-provider aws {
+provider "aws" {
   region = "us-east-1"
 }
 
-module config_aggregator {
+module "config_aggregator" {
   source = "../../"
 
   aggregator = {
@@ -17,15 +17,15 @@ module config_aggregator {
   }
 }
 
-resource random_string this {
+resource "random_string" "this" {
   length  = 6
   number  = false
   special = false
   upper   = false
 }
 
-data aws_caller_identity current {}
+data "aws_caller_identity" "current" {}
 
-output config_aggregator {
+output "config_aggregator" {
   value = module.config_aggregator
 }

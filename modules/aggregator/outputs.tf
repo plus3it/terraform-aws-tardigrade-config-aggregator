@@ -1,4 +1,4 @@
-output aggregator {
+output "aggregator" {
   description = "Object with the Config Aggregator attributes"
   # account source region is null on initial apply when all_regions is true.
   # this can cause a diff on second apply when the entire resource is output

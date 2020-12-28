@@ -1,8 +1,8 @@
-provider aws {
+provider "aws" {
   region = "us-east-1"
 }
 
-module config_authorization {
+module "config_authorization" {
   source = "../../"
 
   authorization = {
@@ -12,15 +12,15 @@ module config_authorization {
   }
 }
 
-resource random_string this {
+resource "random_string" "this" {
   length  = 6
   number  = false
   special = false
   upper   = false
 }
 
-data aws_caller_identity current {}
+data "aws_caller_identity" "current" {}
 
-output config_authorization {
+output "config_authorization" {
   value = module.config_authorization
 }

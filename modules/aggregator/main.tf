@@ -1,8 +1,8 @@
-resource aws_config_configuration_aggregator this {
+resource "aws_config_configuration_aggregator" "this" {
   name = var.name
   tags = merge({ Name = var.name }, var.tags)
 
-  dynamic account_aggregation_source {
+  dynamic "account_aggregation_source" {
     for_each = var.account_aggregation_source != null ? [var.account_aggregation_source] : []
     content {
       account_ids = account_aggregation_source.value.account_ids
@@ -11,7 +11,7 @@ resource aws_config_configuration_aggregator this {
     }
   }
 
-  dynamic organization_aggregation_source {
+  dynamic "organization_aggregation_source" {
     for_each = var.organization_aggregation_source != null ? [var.organization_aggregation_source] : []
     content {
       all_regions = organization_aggregation_source.value.all_regions

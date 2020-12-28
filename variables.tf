@@ -1,4 +1,4 @@
-variable aggregator {
+variable "aggregator" {
   description = "Object specifying the configuration of a Config Aggregator"
   type = object({
     name = string
@@ -17,7 +17,7 @@ variable aggregator {
   default = null
 }
 
-variable authorization {
+variable "authorization" {
   description = "Object specifying the configuration of a Config Aggregator Authorization"
   type = object({
     account_id = string

@@ -1,4 +1,4 @@
-module aggregator {
+module "aggregator" {
   source = "./modules/aggregator"
   count  = var.aggregator != null ? 1 : 0
 
@@ -8,7 +8,7 @@ module aggregator {
   tags                            = var.aggregator.tags
 }
 
-module authorization {
+module "authorization" {
   source = "./modules/authorization"
   count  = var.authorization != null ? 1 : 0
 

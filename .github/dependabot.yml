@@ -5,28 +5,13 @@ updates:
   schedule:
     interval: daily
   open-pull-requests-limit: 10
-- package-ecosystem: pip
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 10
-- package-ecosystem: gomod
-  directory: "/tests"
+- package-ecosystem: terraform
+  directory: "/tests/config_authorization"
   schedule:
     interval: daily
   open-pull-requests-limit: 10
 - package-ecosystem: terraform
-  directory: "/tests/no_create"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 10
-- package-ecosystem: terraform
-  directory: "/tests/create_config_auth"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 10
-- package-ecosystem: terraform
-  directory: "/tests/create_config_aggregator"
+  directory: "/tests/config_aggregator"
   schedule:
     interval: daily
   open-pull-requests-limit: 10

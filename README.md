@@ -40,8 +40,8 @@ No resources.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_aggregator"></a> [aggregator](#input\_aggregator) | Object specifying the configuration of a Config Aggregator | <pre>object({<br>    name = string<br>    tags = map(string)<br>    account_aggregation_source = object({<br>      account_ids = list(string)<br>      all_regions = bool<br>      regions     = list(string)<br>    })<br>    organization_aggregation_source = object({<br>      all_regions = bool<br>      regions     = list(string)<br>      role_arn    = string<br>    })<br>  })</pre> | `null` | no |
-| <a name="input_authorization"></a> [authorization](#input\_authorization) | Object specifying the configuration of a Config Aggregator Authorization | <pre>object({<br>    account_id = string<br>    region     = string<br>    tags       = map(string)<br>  })</pre> | `null` | no |
+| <a name="input_aggregator"></a> [aggregator](#input\_aggregator) | Object specifying the configuration of a Config Aggregator | <pre>object({<br/>    name = string<br/>    tags = map(string)<br/>    account_aggregation_source = object({<br/>      account_ids = list(string)<br/>      all_regions = bool<br/>      regions     = list(string)<br/>    })<br/>    organization_aggregation_source = object({<br/>      all_regions = bool<br/>      regions     = list(string)<br/>      role_arn    = string<br/>    })<br/>  })</pre> | `null` | no |
+| <a name="input_authorization"></a> [authorization](#input\_authorization) | Object specifying the configuration of a Config Aggregator Authorization | <pre>object({<br/>    account_id = string<br/>    region     = string<br/>    tags       = map(string)<br/>  })</pre> | `null` | no |
 
 ## Outputs
 
